@@ -1,0 +1,14 @@
+*/target
+*.iml
+/.idea
+.idea
+/.mvn
+.mvn
+*.cmd
+*.class
+target/
+.project
+.settings/
+.classpath
+logs/*
+*.log
