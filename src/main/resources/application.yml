@@ -2,4 +2,4 @@ server:
   port: 9999
 spring:
   application:
-    name: yy
+    name: yy  #swagger页面好像没有作用？
