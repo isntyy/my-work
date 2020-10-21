@@ -31,6 +31,10 @@ spring:
         reset-enable: false
         login-username: sysadmin
         login-password: "000000"
-flyway:
+flyway: #数据库自动升级方案
   locations: classpath:yys
-  baseline-on-migrate: true
+  baseline-on-migrate: true #数据库不为空，则把当前数据库作为v1版本
+  enabled: false
+context:
+  initializer:
+    classes: com.yy.study.initital.ThirdInitital

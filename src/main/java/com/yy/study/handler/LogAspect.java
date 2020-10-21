@@ -24,8 +24,8 @@ import java.util.Map;
  * @author wyy
  * @since 2020-04-12 22:13
  */
-@Component
-@Aspect
+/*@Component
+@Aspect*/
 public class LogAspect {
 
     private static String METHOD_GET = "GET";
