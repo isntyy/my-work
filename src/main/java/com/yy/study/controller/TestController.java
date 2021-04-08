@@ -41,14 +41,33 @@ public class TestController {
     }
 
     public static void main(String[] args) {
-        String s1 = "[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——_+|{}【】‘；：”“’。，、？]";
+       /* String s1 = "[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——_+|{}【】‘；：”“’。，、？]";
         String s3 = "[_]+";
         String data = "_";
         Pattern p = Pattern.compile(s1);
         Matcher m = p.matcher("www*");
         boolean b = m.find();
-        System.out.println(m.find());
+        System.out.println(m.find());*/
 
+        double number1 = 1;
+        double number2 = 20.2;
+        double number3 = 300.03;
+        double v4 = number1 + number2 + number3;
+        double v = (number1 + number2 + number3) * 100;
+        int v1 = (int) v;
+        System.out.println(v4);
+        System.out.println(v);
+        System.out.println(v1);
+
+
+        int n1 = 1;
+        int n2 = 20;
+        int n3 = (int) 29.3d;
+        double v2 = (double) n1 + n2;
+        float v3 = (float) n1 + n2;
+        System.out.println(v2);
+        System.out.println(v3);
+        System.out.println(n3);
 
     }
 }
