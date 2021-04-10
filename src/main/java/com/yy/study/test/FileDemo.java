@@ -9,8 +9,16 @@ import java.io.*;
 public class FileDemo {
 
     public static void main(String[] args) throws Exception {
-        write();
-        read();
+        DynamicArrayList list = new DynamicArrayList();
+        list.add(11);
+        list.add(22);
+        list.add(33);
+        list.add(44);
+        list.add(55);
+        list.add(66);
+
+        //list.add(5,00);
+        System.out.println(list);
     }
 
     /**

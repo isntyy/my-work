@@ -16,7 +16,7 @@ public class DynamicArrayList {
      */
     private int[] elements;
 
-    private static final int DEFAULT_CAPACITY = 10;
+    private static final int DEFAULT_CAPACITY = 3;
     private static final int ELEMENT_NOT_FOUND = -1;
 
     public DynamicArrayList(int capaticy) {
@@ -65,6 +65,9 @@ public class DynamicArrayList {
      * @param element
      */
     public void add(int element) {
+        //add(size,element);
+        //
+        isExpansion(size+1);
         elements[size] = element;
         size++;
     }
@@ -102,7 +105,35 @@ public class DynamicArrayList {
      * @param element
      */
     public void add(int index, int element) {
+        if (index < 0 || index > size){
+            throw new IndexOutOfBoundsException("数组长度size："+size+", index: "+index);
+        }
+        // 扩容
+        isExpansion(size+1);
+        size++;
+        for (int i = size; i > index; i--) {
+                elements[i] = elements[i-1];
+        }
+        elements[index] = element;
+    }
 
+    /**
+     * 判断是否进行扩容
+     *
+     * @param criticalSize 至少需要的元素个数 size+1
+     */
+    private void isExpansion(int criticalSize){
+        // 当前容量大于至少需要容量时，不需要扩容
+        int oldCapacity = elements.length;
+        if (oldCapacity >= criticalSize)return;
+
+        int newCapacity  = oldCapacity + (oldCapacity >> 1);
+        int[] newArr = new int[newCapacity];
+        for (int i = 0; i < elements.length; i++) {
+            newArr[i] = elements[i];
+        }
+        elements = newArr;
+        System.out.println(oldCapacity+" 扩容为："+newCapacity);
     }
 
     /**
