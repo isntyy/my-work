@@ -1,4 +1,4 @@
-package com.yy.study.test;
+package com.yy.study.test.list;
 
 /**
  * @desc 自定义数组

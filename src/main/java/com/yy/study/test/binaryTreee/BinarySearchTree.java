@@ -1,15 +1,22 @@
-package com.yy.study.test;
+package com.yy.study.test.binaryTreee;
+
+import java.util.Comparator;
 
 /**
  * @author wyy
  * @desc
  * @since 2021-04-19 21:50
  */
+
+// public class BinarySearchTree<E extends Comparable>
 public class BinarySearchTree<E> {
 
     private int size;
     private Node<E> root;
-
+    private Comparator<E> compator;
+    public BinarySearchTree(Comparator<E> compator) {
+        this.compator = compator;
+    }
 
     public void add(E element) {
 
@@ -38,17 +45,20 @@ public class BinarySearchTree<E> {
 
         // 记录下带添加元素要插入的的位置方向
         Node<E> newNode = new Node<>(element, currentParent);
-        if (compare > 0){
+        if (compare > 0) {
             currentParent.right = newNode;
-        }else if (compare < 0){
+        } else if (compare < 0) {
             currentParent.left = newNode;
         }
 
     }
 
     public int compare(E e1, E e2) {
+        if (compator != null){
+            return compator.compare(e1,e2);
+        }
 
-        return 0;
+        return ((Comparable<E>)e1).compareTo(e2);
     }
 
     private static class Node<E> {
