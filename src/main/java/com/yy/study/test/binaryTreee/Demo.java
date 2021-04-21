@@ -1,5 +1,7 @@
 package com.yy.study.test.binaryTreee;
 
+import com.yy.study.test.binaryTreee.printer.BinaryTrees;
+
 import java.util.Comparator;
 
 /**
@@ -11,35 +13,21 @@ public class Demo {
 
 
     public static void main(String[] args) {
-        String s1 = "abc";
-        String s2 = "abcd";
-        System.out.println(s1.compareTo(s2));
-
-
-        Comparator<Person2> compator1 = new Comparator<Person2>() {
+        /*Comparator<Person2> compator1 = new Comparator<Person2>() {
             @Override
             public int compare(Person2 e1, Person2 e2) {
                 return e1.getAge() - e2.getAge() ;
             }
-        };
+        };*/
 
-        Comparator<Person2> compator2 = new Comparator<Person2>() {
-            @Override
-            public int compare(Person2 e1, Person2 e2) {
-                return e2.getAge() - e1.getAge() ;
-            }
-        };
-
-        //
-        BinarySearchTree<Person2> tree = new BinarySearchTree<Person2>(compator1);
-        tree.add(new Person2(12));
-        tree.add(new Person2(20));
-
-        BinarySearchTree<Person2> tree1 = new BinarySearchTree<Person2>(new Comparator<Person2>() {
-            @Override
-            public int compare(Person2 o1, Person2 o2) {
-                return 0;
-            }
-        });
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(33);
+        tree.add(55);
+        tree.add(66);
+        tree.add(14);
+        tree.add(51);
+        BinaryTrees.print(tree);
+        System.out.println("\n");
+        tree.preorderTraversal1();
     }
 }

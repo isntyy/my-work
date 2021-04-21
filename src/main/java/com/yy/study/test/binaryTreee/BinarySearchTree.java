@@ -1,5 +1,7 @@
 package com.yy.study.test.binaryTreee;
 
+import com.yy.study.test.binaryTreee.printer.BinaryTreeInfo;
+
 import java.util.Comparator;
 
 /**
@@ -9,13 +11,16 @@ import java.util.Comparator;
  */
 
 // public class BinarySearchTree<E extends Comparable>
-public class BinarySearchTree<E> {
+public class BinarySearchTree<E> implements BinaryTreeInfo {
 
     private int size;
     private Node<E> root;
     private Comparator<E> compator;
     public BinarySearchTree(Comparator<E> compator) {
         this.compator = compator;
+    }
+    public BinarySearchTree() {
+        this(null);
     }
 
     public void add(E element) {
@@ -31,13 +36,13 @@ public class BinarySearchTree<E> {
         // 待添加节点元素的父节点
         Node<E> currentParent = root;
         int compare = 0;
-        while (root != null) {
+        while (currentNode != null) {
             compare = compare(element, currentNode.element);
             currentParent = currentNode;
             if (compare > 0) {
-                root = currentNode.right;
+                currentNode = currentNode.right;
             } else if (compare < 0) {
-                root = currentNode.left;
+                currentNode = currentNode.left;
             } else {
                 return;
             }
@@ -50,14 +55,27 @@ public class BinarySearchTree<E> {
         } else if (compare < 0) {
             currentParent.left = newNode;
         }
+        size++;
+    }
 
+    public void preorderTraversal1(){
+        preorderTraversal(root);
+    }
+    /**
+     * 前序遍历
+     * @param node
+     */
+    private void preorderTraversal(Node<E> node){
+        if (node == null) return;
+        System.out.println(node.element);
+        preorderTraversal(node.left);
+        preorderTraversal(node.right);
     }
 
     public int compare(E e1, E e2) {
         if (compator != null){
             return compator.compare(e1,e2);
         }
-
         return ((Comparable<E>)e1).compareTo(e2);
     }
 
@@ -71,5 +89,26 @@ public class BinarySearchTree<E> {
             this.element = element;
             this.parent = parent;
         }
+    }
+
+
+    @Override
+    public Object root() {
+        return root;
+    }
+
+    @Override
+    public Object left(Object node) {
+        return ((Node<E>)node).left;
+    }
+
+    @Override
+    public Object right(Object node) {
+        return ((Node<E>)node).right;
+    }
+
+    @Override
+    public Object string(Object node) {
+        return ((Node<E>)node).element;
     }
 }
