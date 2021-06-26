@@ -1,4 +1,4 @@
-package com.yy.study.event;
+package com.yy.exercise.event;
 
 import java.util.ArrayList;
 import java.util.List;

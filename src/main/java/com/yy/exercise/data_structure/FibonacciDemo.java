@@ -1,4 +1,4 @@
-package com.yy.study.test;
+package com.yy.exercise.data_structure;
 
 /**
  * @author wyy

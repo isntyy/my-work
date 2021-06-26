@@ -1,8 +1,4 @@
-package com.yy.study.test.binaryTreee;
-
-import com.yy.study.test.binaryTreee.printer.BinaryTrees;
-
-import java.util.Comparator;
+package com.yy.exercise.data_structure.binaryTreee;
 
 /**
  * @author wyy
@@ -20,7 +16,7 @@ public class Demo {
             }
         };*/
 
-        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+       /* BinarySearchTree<Integer> tree = new BinarySearchTree<>();
         tree.add(33);
         tree.add(55);
         tree.add(66);
@@ -28,6 +24,8 @@ public class Demo {
         tree.add(51);
         BinaryTrees.print(tree);
         System.out.println("\n");
-        tree.preorderTraversal1();
+        tree.preorderTraversal1();*/
+
+
     }
 }

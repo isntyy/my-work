@@ -1,4 +1,4 @@
-package com.yy.study.test.list;
+package com.yy.exercise.data_structure.list;
 
 /**
  * @desc 自定义数组

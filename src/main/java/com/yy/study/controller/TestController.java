@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,6 +40,13 @@ public class TestController {
             FieldError error = (FieldError) errors.getAllErrors().get(0);
             return error.getField() + error.getDefaultMessage();
         }
+        return "success";
+    }
+
+
+    @PostMapping("/test1")
+    public String test2(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.getWriter().print("hello");
         return "success";
     }
 

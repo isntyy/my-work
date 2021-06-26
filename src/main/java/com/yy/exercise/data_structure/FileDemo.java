@@ -1,6 +1,6 @@
-package com.yy.study.test;
+package com.yy.exercise.data_structure;
 
-import com.yy.study.test.list.DynamicArrayList;
+import com.yy.exercise.data_structure.list.DynamicArrayList;
 
 import java.io.*;
 

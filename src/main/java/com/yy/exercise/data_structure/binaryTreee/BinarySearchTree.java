@@ -1,6 +1,6 @@
-package com.yy.study.test.binaryTreee;
+package com.yy.exercise.data_structure.binaryTreee;
 
-import com.yy.study.test.binaryTreee.printer.BinaryTreeInfo;
+import com.yy.exercise.data_structure.binaryTreee.printer.BinaryTreeInfo;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package com.yy.study.test.binaryTreee;
+package com.yy.exercise.data_structure.binaryTreee;
 
 /**
  * @author wyy
